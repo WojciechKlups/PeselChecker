@@ -20,13 +20,18 @@ public class PeselCheckingThingsTest {
 
     }
 
-//    @Test
-//    public void shouldThrowExceptionWhenUserInputsText() {
-//        //Given
-//        PeselCheckingThings peselCheckingThings = new PeselCheckingThings();
-//        //When
-//        peselCheckingThings.peselToLongArrayMaker();
-//        //Then
-//    }
+    @Test
+    public void shouldThrowExceptionWhenUserInputsText() {
+        //Given
+        PeselCheckingThings peselCheckingThings = new PeselCheckingThings();
+        //When
+        try {
+            peselCheckingThings.checkPesel("pokpofs");
+            Assert.fail("Exception was not thrown");
+        } catch (TextInputAsPeselException e) {
+            e.printStackTrace();
+        }
+        //Then
+    }
 
 }

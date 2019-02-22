@@ -8,6 +8,7 @@ public class PeselCheckingThings implements PeselChecker {
     @Override
     public boolean checkPesel(String userPesel) {
 
+        validateInput(userPesel);
         validateLength(userPesel);
 
         String userPeselStringArray[] = userPesel.split("\\B");
@@ -33,7 +34,11 @@ public class PeselCheckingThings implements PeselChecker {
         }
     }
 
-
+    private void validateInput(String userPesel) {
+        if (!userPesel.matches("\\d+")) {
+            throw new TextInputAsPeselException("Pesel has only digits");
+        }
+    }
 
 
     private void validateLength(String userPesel) {
