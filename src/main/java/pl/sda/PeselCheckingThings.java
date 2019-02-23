@@ -18,10 +18,15 @@ public class PeselCheckingThings implements PeselChecker {
 
             userPeselIntArray[i] = Integer.parseInt(userPeselStringArray[i]);
         }
+        int algorithmSum = 0;
 
-        int algorithmSum = ((9*(userPeselIntArray[0])) + (7*(userPeselIntArray[1])) + (3*(userPeselIntArray[2])) +
-                (1*(userPeselIntArray[3])) + (9*(userPeselIntArray[4])) + (7*(userPeselIntArray[5])) + (3*(userPeselIntArray[6])) +
-                (1*(userPeselIntArray[7])) + (9*(userPeselIntArray[8])) + (7*(userPeselIntArray[9])));
+        int[] algorithmMultiplicators = new int[]{9, 7, 3, 1, 9, 7, 3, 1, 9, 7};
+
+        for (int i = 0; i < userPeselStringArray.length - 1 ; i++) {
+
+            algorithmSum = algorithmSum + userPeselIntArray[i] * algorithmMultiplicators[i];
+            
+        }
 
         int algorithmResult = algorithmSum % 10;
 
