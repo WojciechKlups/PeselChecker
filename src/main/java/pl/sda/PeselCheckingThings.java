@@ -8,6 +8,8 @@ public class PeselCheckingThings implements PeselChecker {
     @Override
     public boolean checkPesel(String userPesel) {
 
+        System.out.println("Please enter your PESEL: ");
+
         validateInput(userPesel);
         validateLength(userPesel);
 
