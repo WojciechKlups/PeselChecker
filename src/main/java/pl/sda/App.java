@@ -12,6 +12,7 @@ public class App extends PeselCheckingThings
     {
         App app = new App();
         Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter your PESEL: ");
         String userPesel = scan.nextLine();
         app.checkPesel(userPesel);
     }
